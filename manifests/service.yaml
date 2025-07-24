@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: demo-wf01
+  namespace: clock
+  labels:
+    app.kubernetes.io/name: demo-wf01
+    kubernetes.azure.com/generator: devhub
+spec:
+  type: LoadBalancer
+  selector:
+    app.kubernetes.io/name: demo-wf01
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
