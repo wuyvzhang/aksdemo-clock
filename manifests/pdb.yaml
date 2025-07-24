@@ -1,0 +1,13 @@
+apiVersion: policy/v1
+kind: PodDisruptionBudget
+metadata:
+  name: demo-wf01
+  labels:
+    app.kubernetes.io/name: demo-wf01
+    app.kubernetes.io/part-of: demo-wf01-project
+    kubernetes.azure.com/generator: devhub
+spec:
+  maxUnavailable: 1
+  selector:
+    matchLabels:
+      app: demo-wf01
